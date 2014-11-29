@@ -19,8 +19,9 @@
     $row = mysql_fetch_assoc($result);
     // クエリの成功判定
     if($row){
-      // セッションにユーザIDを保存
+      // セッションとクッキーにユーザIDを保存
       $_SESSION['id'] = $row['id'];
+      setcookie('id', $row['id']);
       mysql_close($link);
       // メインへジャンプ
       header("Location: ./main.php");

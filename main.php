@@ -1,3 +1,7 @@
+<?php
+  require("session.php");
+  session_main_check();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -7,7 +11,12 @@
   <title>つぶやきシェア | メイン</title>
   <!-- Latest compiled and minified CSS -->
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="signin.css" rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -15,14 +24,20 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body
-<div class="container">
+<body>
+  <div class="container">
   <h2>メインページ</h2>
+  <!-- css 書くのサボり -->
+  <br>
+  <a href="signout.php">サインアウト</a>
+  <input id="tweet-form" type="text" class="form-control" placeholder="ツイート">
+  <br>
+  <div id="tweet-field" class="tweet-field">
+    <?php
+      require("main_func.php");
+    ?>
+  </div>
 </div><!-- /container -->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.jss"></script>
 </body>
 </html>

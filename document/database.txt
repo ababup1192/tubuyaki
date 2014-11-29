@@ -28,3 +28,11 @@ INSERT INTO User(id, email, password, name)
   VALUES (null, 'tubuyaki@gmail.com', 'tubuyaki', 'つぶやき');
 
 SELECT * FROM User;
+
+SELECT * FROM Tweet ORDER BY id DESC;
+
+INSERT INTO Tweet(id, user_id, content)
+  VALUES (null, 1, 'にゃんにゃん');
+
+SELECT User.id, User.name, Tweet.content
+  FROM Tweet, User ORDER BY Tweet.id DESC;
